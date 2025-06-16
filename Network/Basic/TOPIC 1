@@ -1,3 +1,109 @@
-# OSI Module
+**OSI Model**
+
+The open systems interconnection (OSI) model is a conceptual model created by the International Organization for Standardization (ISO 1984) which enables diverse communication systems to communicate using standard protocols.
+
+If the device is the sender, that time the data flow through the OSI model is in the top-down approach. and vice-versa for the receiver, if the device is the receiver then the data flow is bottom-up.
+
+
+
+Now let’s start with a profound understanding of all 7 layers of the OSI model
+
+**Application Layer**
+This is the only layer that directly interacts with data from the user.
+This layer enables communication between software applications through protocols like HTTP, FTP, SMTP, and DNS.
+Software applications like web browsers and email clients rely on the application layer to initiate communications.
+
+FTP — File Transfer Protocol
+HTTP/S — Hypertext transfer protocol / Security
+SMTP — Simple Mail Transfer Protocol
+DNS — Domain naming system
+
+**Presentation Layer**
+The Presentation layer receives data in textual format from the Application layer. It primarily conducts three operations on this data.
+
+Data Translation
+Data Compression
+Data Encryption
+Presentation layer in OSI model
+Presentation Layer
+
+**Session Layer**
+This is the layer responsible for opening and closing communication between the two devices.
+The time between when the communication is opened and closed is known as the session.
+The session layer ensures that the session stays open long enough to transfer all the data being exchanged, and then promptly closes the session to avoid wasting resources.
+
+This layer is also again responsible for the 3 functions :
+
+Session Management
+→ Session establishment between 2 nodes.
+→ Session Opening
+→ Session closing
+Authentication
+Authorization
+Session Layer in OSI model
+Session Layer
+Transport Layer
+The transport layer takes data from the above layer converts it into segments and sends it to a further layer. (By adding the port address into it) Note:- The PDU at the transport layer is called the segments.
+The transport layer is a point-to-point OR node-to-node protocol instead of hope to hope protocol.
+Uses 2 popular protocols named TCP and UDP. (Who creates segments).
+It also checks for error control at the receiver's end. and responsible for flow control at the sender side.
+→ Flow control — It is the term to maintain the flow of both the nodes (Server and receiver). Transport protocol helps to maintain the flow of data (bit rates).
+→ Error Control — Transport layer checks for automatic repeat requests if any data gets lost. Also performs the checksum at the receiver's end.
+The transport layer is operated by the Operating System. It is a part of the OS and communicates with the Application Layer by making system calls.
+The transport layer is called as the Heart of the OSI model.
+
+**Transport Layer**
+TCP vs UDP differ in their transmission mechanisms:
+
+TCP facilitates connection-oriented transmission, while UDP enables connection-less transmission.
+UDP typically offers faster transmission compared to TCP.
+UDP lacks feedback mechanisms, whereas TCP provides feedback.
+UDP is favoured for scenarios where receiving all data is not critical, such as online streaming, gaming, and VOIP. Conversely, TCP is preferred for applications like web browsing, email, and FTP, where complete data delivery is essential.
+
+
+**Network Layer**
+Services Offered by Network Layer :
+
+Packetization
+Routing
+Forwarding
+The major task of the network layer is to transfer the data from one node to another node which is present in the another network also.
+The network layer generates packets from the segments received by the transport layer.
+The network layer added the header in the segment to generate it into the packet to transfer it further.
+It decides the route to be taken by the packets to travel from the source to the destination among the multiple routes available in a network (also called routing).
+The part consists of the source IP address and the destination IP address.
+The network layer uses the Internet protocol (IP), the Address Resolution Protocol (ARP), and the Internet Control Message Protocol (ICMP) (for error control) protocol.
+Routers & Type 3 Switches are the network layer devices.
+
+
+**Data Link Layer**
+The most important part of DLL (Major responsibility) is Error control, Flow Control, Access control and ‘node to node delivery’ (Using MAC address), Using the ARP protocol.
+In DLL there is a frame get generated.
+The DLL added a ‘trailer’ to the packet.
+Data Link layer is handled by the NIC
+The Data Link layer works for the same network only.
+Switch & Bridge are Data Link Layer devices.
+NOTE:- The data link layer receives the information in the form of packets from the Network layer, it divides packets into frames and sends those frames bit-by-bit to the underlying physical layer.
+
+**Physical Layer**
+The lowest layer of the OSI reference model is the physical layer. The physical layer contains information in the form of bits. It is responsible for transmitting individual bits from the transmission media.
+
+Functions Performed by Physical Layer -
+
+The following are some important and basic functions that are performed by the Physical Layer of the OSI Model –
+
+The physical layer maintains the data rate (how many bits a sender can send per second).
+It performs the Synchronization of bits.
+It helps in Transmission Medium decisions (direction of data transfer).
+It helps in Physical Topology (Mesh, Star, Bus, Ring) decisions (Topology through which we can connect the devices).
+It helps in providing Physical Medium and Interface decisions.
+It provides two types of configuration Point Point configuration and Multi-Point configuration.
+It provides an interface between devices (like PCs or computers) and transmission medium.
+It has a protocol data unit in bits.
+Hubs, Ethernet, etc. are used in this layer.
+
+
+
+
 https://makarand-khiste.medium.com/understanding-the-osi-model-all-7-layers-explained-with-architecture-afd42c7b7483
 
